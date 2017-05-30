@@ -1,0 +1,16 @@
+language: php
+
+php:
+  - 5.4
+  - 5.5
+  - 5.6
+  - 7.0
+  - 7.1
+  - hhvm
+
+  env:
+  - DB=mysql
+
+sudo: false
+
+script: php -d zend.enable_gc=0 -d mbstring.internal_encoding=UTF-8 vendor/bin/phpunit --coverage-text --configuration phpunit.xml
